@@ -8,6 +8,8 @@ import Raleway from "../fonts/Raleway-Regular.ttf";
 import Header from "../components/Header";
 import AngledStrip from "../components/AngledStrip";
 
+import {graphql} from "gatsby";
+
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -49,19 +51,33 @@ const theme = {
     main: "mediumseagreen"
 };
 
-class Index extends React.Component {
+const Index = ({data}) => {
+    return (
+        <div>
+            <GlobalStyle/>
+            <ThemeProvider theme={theme}>
+                <Header title="Chocologo" description={"Vaša najslađa poruka"} img={data.img.childImageSharp.fluid}/>
+                <AngledStrip title={"Who we are?"}
+                             description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
+            </ThemeProvider>
+        </div>
+    );
+};
 
-    render() {
-        return (
-            <div>
-                <GlobalStyle/>
-                <ThemeProvider theme={theme}>
-                    <Header title="Chocologo" description={"Vaša najslađa poruka"}/>
-                    <AngledStrip title={"Who we are?"} description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
-                </ThemeProvider>
-            </div>
-        );
+export const query = graphql`
+    {
+        img: file(relativePath: {eq: "background_main.jpg"}) {
+            childImageSharp {
+                fluid {
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                }
+            }
+        }
     }
-}
+`;
 
 export default Index;
