@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import * as marked from "marked";
-
 
 const Skew = styled.div`
   -webkit-transform: skewY(-5deg);
@@ -60,11 +58,6 @@ export interface AngledStripProps {
 }
 
 class AngledStrip extends React.Component<AngledStripProps> {
-
-    renderMd(rawText: string, extractHeadings: boolean = false): string {
-        return marked(rawText);
-    }
-
     render() {
         return (
             <div>
