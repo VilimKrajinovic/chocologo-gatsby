@@ -2,12 +2,15 @@ import * as React from "react";
 
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import Raleway from "../fonts/Raleway-Regular.ttf";
+import Lato from "../fonts/Lato-LightItalic.ttf";
 
 import Header from "../components/Header";
 import AngledStrip from "../components/AngledStrip";
 
 import {graphql} from "gatsby";
 import FixedBackground from "../components/FixedBackground";
+import RoundedContainer from "../components/Caption";
+import Caption from "../components/Caption";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -16,6 +19,14 @@ font-family: Raleway;
 src: url(${Raleway}) format('truetype');
 font-style: normal;
 }
+
+
+@font-face {
+font-family: Lato;
+src: url(${Lato}) format('truetype');
+font-style: normal;
+}
+
 
 body{
   width: 100%;
@@ -47,7 +58,7 @@ const theme = {
         }
     },
     backgroundImages: {
-        height: "600px",
+        height: "60em",
     }
 };
 
@@ -61,8 +72,12 @@ const Index = ({data}) => {
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
                 <FixedBackground img = {data.firstFixedBackground.childImageSharp.fluid.src}>
+                    <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
                 </FixedBackground>
                 <AngledStrip title={"What we do?"} description={"We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos."}/>
+                <FixedBackground img = {data.secondFixedBackground.childImageSharp.fluid.src}>
+                    <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
+                </FixedBackground>
             </ThemeProvider>
         </div>
     );
@@ -78,6 +93,13 @@ export const query = graphql`
             }
         }
         firstFixedBackground: file(relativePath: {eq: "first.jpg"}) {
+            childImageSharp {
+                fluid(quality:100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+        secondFixedBackground: file(relativePath: {eq: "second.jpg"}) {
             childImageSharp {
                 fluid(quality:100) {
                     ...GatsbyImageSharpFluid_tracedSVG

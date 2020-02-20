@@ -17,15 +17,13 @@ const HeaderTitle = styled.h1`
   grid-area: 2/1/2/3;
   align-self: center;
   justify-self: center;
-  
-  margin: 0;
+  margin: -5rem 0 0;
   
   color: ${props => props.theme.typography.heading.color};
   font-size: ${props => props.theme.typography.heading.fontSize};
   font-weight: normal;
   font-family: Riesling, sans-serif;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.4);
-  margin-top: -5rem;
 `;
 
 const HeaderDescription = styled.p`

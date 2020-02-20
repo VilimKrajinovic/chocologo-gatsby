@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components'
+import RoundedContainer from "./Caption";
 
 const BackgroundImageStyle = styled.div`
   position: relative;
@@ -13,9 +14,14 @@ const BackgroundImageStyle = styled.div`
   z-index: -10;
 `;
 
+
 const FixedBackground = (props) => {
     return (
-        <BackgroundImageStyle img={props.img}/>
+        <>
+            <BackgroundImageStyle img={props.img}>
+                {props.children}
+            </BackgroundImageStyle>
+        </>
     );
 };
 
