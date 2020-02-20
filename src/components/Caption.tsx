@@ -20,7 +20,7 @@ const RoundedBox = styled.div`
   background: linear-gradient(90deg, ${props => props.theme.strips.gradient.from} 10%, ${props => props.theme.strips.gradient.to} 90%);
   border-radius: 20px;
   position: absolute;
-  width:400px;
+  width:30rem;
   left: 100%;
   color: #f7f7f7;
   text-align: center;
