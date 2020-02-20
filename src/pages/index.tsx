@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import AngledStrip from "../components/AngledStrip";
 
 import {graphql} from "gatsby";
+import FixedBackground from "../components/FixedBackground";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -45,7 +46,9 @@ const theme = {
             to: "#bf6000"
         }
     },
-    main: "mediumseagreen"
+    backgroundImages: {
+        height: "600px",
+    }
 };
 
 const Index = ({data}) => {
@@ -53,20 +56,30 @@ const Index = ({data}) => {
         <div>
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
-                <Header title="Chocologo" description={"Vaša najslađa poruka"} img={data.img.childImageSharp.fluid.src}/>
+                <Header title="Chocologo" description={"Vaša najslađa poruka"}
+                        img={data.headerBackground.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
+                <FixedBackground img = {data.firstFixedBackground.childImageSharp.fluid.src}>
+                </FixedBackground>
+                <AngledStrip title={"What we do?"} description={"We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos."}/>
             </ThemeProvider>
         </div>
     );
 };
 
-
 export const query = graphql`
     {
-        img: file(relativePath: {eq: "background_main.jpg"}) {
+        headerBackground: file(relativePath: {eq: "background_main.jpg"}) {
             childImageSharp {
-                fluid {
+                fluid(quality:100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+        firstFixedBackground: file(relativePath: {eq: "first.jpg"}) {
+            childImageSharp {
+                fluid(quality:100) {
                     ...GatsbyImageSharpFluid_tracedSVG
                 }
             }
