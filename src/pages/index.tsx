@@ -1,8 +1,6 @@
 import * as React from "react";
 
-import styled from "styled-components";
-import {ThemeProvider} from "styled-components";
-import {createGlobalStyle} from "styled-components";
+import {createGlobalStyle, ThemeProvider} from "styled-components";
 import Raleway from "../fonts/Raleway-Regular.ttf";
 
 import Header from "../components/Header";
