@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import styled from "styled-components";
 import {ThemeProvider} from "styled-components";
@@ -17,7 +17,6 @@ font-family: Raleway;
 src: url(${Raleway}) format('truetype');
 font-style: normal;
 }
-
 
 body{
   width: 100%;
@@ -56,7 +55,7 @@ const Index = ({data}) => {
         <div>
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
-                <Header title="Chocologo" description={"Vaša najslađa poruka"} img={data.img.childImageSharp.fluid}/>
+                <Header title="Chocologo" description={"Vaša najslađa poruka"} img={data.img.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
             </ThemeProvider>
@@ -64,16 +63,13 @@ const Index = ({data}) => {
     );
 };
 
+
 export const query = graphql`
     {
         img: file(relativePath: {eq: "background_main.jpg"}) {
             childImageSharp {
                 fluid {
-                    tracedSVG
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
+                    ...GatsbyImageSharpFluid_tracedSVG
                 }
             }
         }

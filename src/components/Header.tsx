@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 import BackgroundImage from 'gatsby-background-image';
 
@@ -44,6 +44,7 @@ const HeaderBackground = styled.div`
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-image: url(${props => props.img});
   filter: brightness(50%);
   position: absolute;
   background-attachment: fixed;
@@ -63,7 +64,7 @@ class Header extends React.Component<HeaderProps> {
     render() {
         return (
             <HeaderDiv>
-                <BackgroundImage fluid={this.props.img}/>
+                <HeaderBackground img={this.props.img}/>
                 <HeaderTitle>{this.props.title}</HeaderTitle>
                 <HeaderDescription>{this.props.description}</HeaderDescription>
             </HeaderDiv>
