@@ -26,7 +26,12 @@ const RoundedBox = styled.div`
   text-align: center;
   transform: translate(-50%,0%);
   height: auto;
-  padding:10px
+  padding:10px;
+  
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
+  
 `;
 
 const Caption = (props) => {
