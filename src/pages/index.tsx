@@ -1,8 +1,9 @@
 import * as React from "react";
 
 import {createGlobalStyle, ThemeProvider} from "styled-components";
-import "../fonts/Raleway-Regular.ttf";
-import "../fonts/Lato-LightItalic.ttf";
+import Raleway from "../../static/fonts/Raleway-Regular.ttf";
+import Lato from "../../static/fonts/Lato-LightItalic.ttf";
+import Riesling from "../../static/fonts/Riesling.ttf";
 
 import Header from "../components/Header";
 import AngledStrip from "../components/AngledStrip";
@@ -14,18 +15,22 @@ import Caption from "../components/Caption";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-font-family: Raleway;
-src: url(${"../fonts/Raleway-Regular.ttf"}) format('truetype');
+font-family: Riesling;
+src: url(${Riesling}) format('truetype');
 font-style: normal;
 }
 
+@font-face {
+font-family: Raleway;
+src: url(${Raleway}) format('truetype');
+font-style: normal;
+}
 
 @font-face {
 font-family: Lato;
-src: url(${"../fonts/Lato-LightItalic.ttf"}) format('truetype');
+src: url(${Lato}) format('truetype');
 font-style: normal;
 }
-
 
 body{
   width: 100%;
@@ -33,14 +38,13 @@ body{
   margin: 0;
   font-family: Raleway, sans-serif;
 }
-
 `;
 
 const theme = {
     typography: {
         heading: {
             color: "white",
-            fontSize: "6rem",
+            fontSize: "6em",
             description: {
                 fontSize: "1rem"
             }
