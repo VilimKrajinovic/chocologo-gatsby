@@ -1,29 +1,28 @@
 import * as React from "react";
 
 import {createGlobalStyle, ThemeProvider} from "styled-components";
-import Raleway from "../fonts/Raleway-Regular.ttf";
-import Lato from "../fonts/Lato-LightItalic.ttf";
+import "../fonts/Raleway-Regular.ttf";
+import "../fonts/Lato-LightItalic.ttf";
 
 import Header from "../components/Header";
 import AngledStrip from "../components/AngledStrip";
 
 import {graphql} from "gatsby";
 import FixedBackground from "../components/FixedBackground";
-import RoundedContainer from "../components/Caption";
 import Caption from "../components/Caption";
 
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
 font-family: Raleway;
-src: url(${Raleway}) format('truetype');
+src: url(${"../fonts/Raleway-Regular.ttf"}) format('truetype');
 font-style: normal;
 }
 
 
 @font-face {
 font-family: Lato;
-src: url(${Lato}) format('truetype');
+src: url(${"../fonts/Lato-LightItalic.ttf"}) format('truetype');
 font-style: normal;
 }
 
