@@ -22,7 +22,12 @@ const HeaderTitle = styled.h1`
   font-size: ${props => props.theme.typography.heading.fontSize};
   font-weight: normal;
   font-family: Riesling, sans-serif;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  
+    @media (max-width: 768px) {
+    font-size: 15vw;
+  }
+  
 `;
 
 const HeaderDescription = styled.p`
@@ -33,7 +38,12 @@ const HeaderDescription = styled.p`
   color: ${props => props.theme.typography.heading.color};
   grid-area: 2/1/2/3;
   margin: 0;
-  padding: 0;
+  padding-top: 3vh;
+  
+  @media (max-width: 768px) {
+    font-size: 3vw;
+  }
+  
 `;
 
 const HeaderBackground = styled.div`

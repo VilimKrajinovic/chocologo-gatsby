@@ -44,9 +44,9 @@ const theme = {
     typography: {
         heading: {
             color: "white",
-            fontSize: "12vh",
+            fontSize: "6vw",
             description: {
-                fontSize: "1rem"
+                fontSize: "1vw"
             }
         },
         strips: {

@@ -21,7 +21,7 @@ const Strip = styled.div`
   width: 100%;
   height: auto;
   min-height: 5rem;
-  margin-top: -7rem;
+  margin-top: -10rem;
   position: absolute;
   background: linear-gradient(90deg, ${props => props.theme.strips.gradient.from} 10%, ${props => props.theme.strips.gradient.to} 90%);
   z-index: 100;
