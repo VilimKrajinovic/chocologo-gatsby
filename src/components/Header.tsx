@@ -1,11 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
-import BackgroundImage from 'gatsby-background-image';
 
 const HeaderDiv = styled.div`
 
 width: 100%;
-height: 80vh;
+height: 100vh;
 position: relative;
 display: grid;
 grid-template-rows: max-content 1fr;
