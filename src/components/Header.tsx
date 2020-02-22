@@ -2,14 +2,17 @@ import * as React from "react";
 import styled from "styled-components";
 
 const HeaderDiv = styled.div`
-
-width: 100%;
-height: 100vh;
-position: relative;
-display: grid;
-grid-template-rows: max-content 1fr;
-grid-template-columns: 1fr max-content;
-
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-columns: 1fr max-content;
+  
+  
+  @media(max-height: 400px){
+    height: 125vh;
+  }
 `;
 
 const HeaderTitle = styled.h1`
@@ -58,7 +61,7 @@ const HeaderBackground = styled.div`
   background-repeat: no-repeat;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -1;  
 `;
 
 export interface HeaderProps {
