@@ -10,17 +10,17 @@ const BackgroundImageStyle = styled.div`
   height: ${props => props.theme.backgroundImages.height};
   min-height: 100%;
   background-image: url(${props => props.img});
-  z-index: -10;
+  z-index: -1000;
 `;
 
 
 const FixedBackground = (props) => {
     return (
-        <>
+        <div>
             <BackgroundImageStyle img={props.img}>
                 {props.children}
             </BackgroundImageStyle>
-        </>
+        </div>
     );
 };
 
