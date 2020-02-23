@@ -1,5 +1,8 @@
 import * as React from 'react';
 import styled from "styled-components";
+import {Tween} from "react-gsap";
+import LazyLoad from 'react-lazyload';
+
 
 const CaptionStyle = styled.span`
   text-align: center;
@@ -36,11 +39,15 @@ const RoundedBox = styled.div`
 
 const Caption = (props) => {
     return (
-        <CaptionWrapper>
-            <RoundedBox>
-                <CaptionStyle>{props.caption}</CaptionStyle>
-            </RoundedBox>
-        </CaptionWrapper>
+        <LazyLoad height={0} once offset={-350}>
+        <Tween from={{y: '50px', opacity: 0, delay: 0.5}}>
+            <CaptionWrapper>
+                <RoundedBox>
+                    <CaptionStyle>{props.caption}</CaptionStyle>
+                </RoundedBox>
+            </CaptionWrapper>
+        </Tween>
+        </LazyLoad>
     );
 };
 

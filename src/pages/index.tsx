@@ -11,8 +11,8 @@ import AngledStrip from "../components/AngledStrip";
 import {graphql} from "gatsby";
 import FixedBackground from "../components/FixedBackground";
 import Caption from "../components/Caption";
-import ReactWOW from 'react-wow';
-import {FadeInUp} from 'animate-css-styled-components';
+
+import LazyLoad from 'react-lazyload';
 
 const GlobalStyle = createGlobalStyle`
 
