@@ -70,6 +70,9 @@ const theme = {
     },
     backgroundImages: {
         height: "60em",
+    },
+    pictureLinks: {
+        size: "300px"
     }
 };
 
