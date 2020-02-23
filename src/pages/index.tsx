@@ -15,7 +15,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import PictureLink from "../components/PictureLink";
-import {Link} from 'gatsby';
+
+import "../../static/styles/bootstrap.css";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -45,7 +46,7 @@ body{
 }
 `;
 
-const ContainerStyle = styled.div`
+const StyledContainer = styled(Container)`
   padding-top: 400px;
 `;
 
@@ -77,13 +78,17 @@ const theme = {
     }
 };
 
+const ColStyle = styled(Col)`
+  display: block;
+`;
+
 const Index = ({data}) => {
     return (
         <div>
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
                 <Header title="Chocologo" description={"Vaša najslađa poruka"}
-                        img={data.headerBackground.childImageSharp.fluid.src}/>
+                                           img={data.headerBackground.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
 
@@ -102,27 +107,30 @@ const Index = ({data}) => {
                              description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem? Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
 
                 <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src}>
-                    <ContainerStyle>
-                        <Container>
-                            <Row>
-                                <Col xs={"auto"}>
-                                    <PictureLink to={"/"}
-                                                 src={data.image1.childImageSharp.fluid.src}
-                                                 description={"Lorem ipsum dolor sit amet."}/>
-                                </Col>
-                                <Col xs={"auto"}>
-                                    <PictureLink to={"/"}
-                                                 src={data.image1.childImageSharp.fluid.src}
-                                                 description={"Lorem ipsum dolor sit amet."}/>
-                                </Col>
-                                <Col xs={"auto"}>
-                                    <PictureLink to={"/"}
-                                                 src={data.image1.childImageSharp.fluid.src}
-                                                 description={"Lorem ipsum dolor sit amet."}/>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </ContainerStyle>
+                    <StyledContainer>
+                        <Row className="justify-content-md-center">
+                            <ColStyle md={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </ColStyle>
+                            <ColStyle md={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </ColStyle>
+                            <ColStyle md={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </ColStyle>
+                        </Row>
+                        <Row className="justify-content-md-center text-md-center">
+                            <Col md="auto">1</Col>
+                            <Col md="auto">2</Col>
+                            <Col md="auto">3</Col>
+                        </Row>
+                    </StyledContainer>
                 </FixedBackground>
             </ThemeProvider>
         </div>

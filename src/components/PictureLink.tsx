@@ -22,7 +22,7 @@ const Description = styled.p`
   font-family: "Century Gothic",sans-serif;
   position: relative;
   top:50%;
-  transform: translateY(-100%);
+  transform: translateY(-50%);
   
 `;
 
@@ -36,7 +36,6 @@ const DescriptionWrapper = styled.div`
   height: ${props => props.theme.pictureLinks.size}!important;
   width: ${props => props.theme.pictureLinks.size} !important;
   text-align: center;
-  top: auto;
   transition: opacity 0.2s;
   
     :hover {
@@ -54,6 +53,7 @@ const StyledDiv = styled.div`
 
 const PictureLink = (props) => {
     return (
+        <Col md={"auto"}>
         <PictureStyle>
             <Link to={props.to}>
                 <StyledDiv>
@@ -66,6 +66,7 @@ const PictureLink = (props) => {
                 </StyledDiv>
             </Link>
         </PictureStyle>
+        </Col>
     );
 };
 
