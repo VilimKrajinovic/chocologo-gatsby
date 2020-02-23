@@ -62,7 +62,7 @@ const HeaderBackground = styled.div`
   background-repeat: no-repeat;
   top: 0;
   left: 0;
-  z-index: -1;  
+  z-index: 0;  
 `;
 
 export interface HeaderProps {

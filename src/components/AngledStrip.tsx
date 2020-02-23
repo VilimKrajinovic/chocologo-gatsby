@@ -3,19 +3,15 @@ import styled from "styled-components";
 import {Tween} from "react-gsap";
 
 const Skew = styled.div`
-  -webkit-transform: skewY(-5deg);
-  -moz-transform: skewY(-5deg);
-  -ms-transform: skewY(-5deg);
-  -o-transform: skewY(-5deg);
   transform: skewY(-5deg);
+  position: relative;
+  z-index: 2;
 `;
 
 const UnSkew = styled.div`
-  -webkit-transform: skewY(5deg);
-  -moz-transform: skewY(5deg);
-  -ms-transform: skewY(5deg);
-  -o-transform: skewY(5deg);
   transform: skewY(5deg);
+  position: relative;
+  z-index: 2;
 `;
 
 const Strip = styled.div`
@@ -25,7 +21,7 @@ const Strip = styled.div`
   margin-top: -10rem;
   position: absolute;
   background: linear-gradient(90deg, ${props => props.theme.strips.gradient.from} 10%, ${props => props.theme.strips.gradient.to} 90%);
-  z-index: 100;
+  z-index: 1000 !important;
 `;
 
 const Content = styled.div`
@@ -44,8 +40,7 @@ margin: 0;
 const Description = styled.p`
   white-space: pre-wrap;
   width: 80%;
-  margin: 5% auto;
-  margin-bottom: 5rem;
+  margin: 5% auto 5rem;
   color: ${props => props.theme.typography.strips.color};
 `;
 
