@@ -86,7 +86,7 @@ const theme = {
         minWidth: "200px",
         minHeight: "200px",
         description: {
-            fontSize: "40px",
+            fontSize: "30px",
         }
     }
 };
@@ -115,7 +115,7 @@ const Index = ({data}) => {
                 <AngledStrip title={"Our products?"}
                              description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem? Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
 
-                <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src} height="100%">
+                <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src} height="auto">
                     <StyledContainer>
                         <Row className="justify-content-center text-center">
                             <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
