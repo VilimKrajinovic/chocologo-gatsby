@@ -11,8 +11,11 @@ import AngledStrip from "../components/AngledStrip";
 import {graphql} from "gatsby";
 import FixedBackground from "../components/FixedBackground";
 import Caption from "../components/Caption";
-
-import LazyLoad from 'react-lazyload';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Picture from "../components/Picture";
+import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -40,6 +43,10 @@ body{
   margin: 0;
   font-family: Raleway, sans-serif;
 }
+`;
+
+const ContainerStyle = styled.div`
+  padding-top: 400px;
 `;
 
 const theme = {
@@ -76,13 +83,32 @@ const Index = ({data}) => {
                         img={data.headerBackground.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
+
                 <FixedBackground img={data.firstFixedBackground.childImageSharp.fluid.src}>
                     <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
                 </FixedBackground>
+
                 <AngledStrip title={"What we do?"}
                              description={"We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos."}/>
+
                 <FixedBackground img={data.secondFixedBackground.childImageSharp.fluid.src}>
                     <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
+                </FixedBackground>
+
+                <AngledStrip title={"Our products?"}
+                             description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem? Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
+
+                <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src}>
+                    <ContainerStyle>
+                        <Container>
+                            <Row>
+                                <Col xs={"auto"}>
+                                    <Picture src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </ContainerStyle>
                 </FixedBackground>
             </ThemeProvider>
         </div>
@@ -106,6 +132,20 @@ export const query = graphql`
             }
         }
         secondFixedBackground: file(relativePath: {eq: "second.jpg"}) {
+            childImageSharp {
+                fluid(quality:100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+        thirdFixedBackground: file(relativePath: {eq: "third.jpg"}) {
+            childImageSharp {
+                fluid(quality:100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                }
+            }
+        }
+        image1: file(relativePath: {eq: "chocolate1.jpg"}) {
             childImageSharp {
                 fluid(quality:100) {
                     ...GatsbyImageSharpFluid_tracedSVG

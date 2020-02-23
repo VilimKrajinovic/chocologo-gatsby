@@ -40,13 +40,13 @@ const RoundedBox = styled.div`
 const Caption = (props) => {
     return (
         <LazyLoad height={0} once offset={-350}>
-        <Tween from={{y: '50px', opacity: 0, delay: 0.1}}>
-            <CaptionWrapper>
-                <RoundedBox>
-                    <CaptionStyle>{props.caption}</CaptionStyle>
-                </RoundedBox>
-            </CaptionWrapper>
-        </Tween>
+            <Tween from={{y: '50px', opacity: 0, delay: 0.1}}>
+                <CaptionWrapper>
+                    <RoundedBox>
+                        <CaptionStyle>{props.caption}</CaptionStyle>
+                    </RoundedBox>
+                </CaptionWrapper>
+            </Tween>
         </LazyLoad>
     );
 };
