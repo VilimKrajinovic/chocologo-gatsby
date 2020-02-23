@@ -57,14 +57,9 @@ const DescriptionWrapper = styled.div`
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     opacity: 100%;
     visibility: visible;
-  }
-  
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     height: ${props => props.theme.pictureLinks.minHeight};
     width: ${props => props.theme.pictureLinks.minWidth};
-  }  
-  
-  
+  }
 `;
 
 const StyledDiv = styled.div`

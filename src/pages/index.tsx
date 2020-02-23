@@ -80,13 +80,13 @@ const theme = {
         height: "60em",
     },
     pictureLinks: {
-        paddingTop: "30vh",
+        paddingTop: "40vh",
         width: "300px",
         height: "300px",
         minWidth: "200px",
         minHeight: "200px",
         description: {
-            fontSize: "30px",
+            fontSize: "2rem",
         }
     }
 };
