@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import {Tween} from "react-gsap";
 
 const Skew = styled.div`
   -webkit-transform: skewY(-5deg);
@@ -57,20 +58,22 @@ class AngledStrip extends React.Component<AngledStripProps> {
     render() {
         return (
             <div>
-                <Skew>
-                    <Strip>
-                        <UnSkew>
-                            <Content>
-                                <Title>
-                                    {this.props.title}
-                                </Title>
-                                <Description>
-                                    {this.props.description}
-                                </Description>
-                            </Content>
-                        </UnSkew>
-                    </Strip>
-                </Skew>
+                <Tween from={{y: "50px", opacity: 0}}>
+                    <Skew>
+                        <Strip>
+                            <UnSkew>
+                                <Content>
+                                    <Title>
+                                        {this.props.title}
+                                    </Title>
+                                    <Description>
+                                        {this.props.description}
+                                    </Description>
+                                </Content>
+                            </UnSkew>
+                        </Strip>
+                    </Skew>
+                </Tween>
             </div>
         );
     }

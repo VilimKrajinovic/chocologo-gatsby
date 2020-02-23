@@ -11,6 +11,8 @@ import AngledStrip from "../components/AngledStrip";
 import {graphql} from "gatsby";
 import FixedBackground from "../components/FixedBackground";
 import Caption from "../components/Caption";
+import ReactWOW from 'react-wow';
+import {FadeInUp} from 'animate-css-styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -74,11 +76,12 @@ const Index = ({data}) => {
                         img={data.headerBackground.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
-                <FixedBackground img = {data.firstFixedBackground.childImageSharp.fluid.src}>
+                <FixedBackground img={data.firstFixedBackground.childImageSharp.fluid.src}>
                     <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
                 </FixedBackground>
-                <AngledStrip title={"What we do?"} description={"We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos."}/>
-                <FixedBackground img = {data.secondFixedBackground.childImageSharp.fluid.src}>
+                <AngledStrip title={"What we do?"}
+                             description={"We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos."}/>
+                <FixedBackground img={data.secondFixedBackground.childImageSharp.fluid.src}>
                     <Caption caption={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, mollitia."}/>
                 </FixedBackground>
             </ThemeProvider>
