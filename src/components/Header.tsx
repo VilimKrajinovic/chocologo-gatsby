@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import ReactWOW from "react-wow";
 import {Tween} from "react-gsap";
 
 const HeaderDiv = styled.div`
@@ -77,8 +76,10 @@ class Header extends React.Component<HeaderProps> {
         return (
             <HeaderDiv>
                 <HeaderBackground img={this.props.img}/>
-                <Tween from={{y: '50px', opacity:0}}>
+                <Tween from={{y: '50px', opacity: 0}}>
                     <HeaderTitle>{this.props.title}</HeaderTitle>
+                </Tween>
+                <Tween from={{y: '50px', opacity: 0, delay: 0.5}}>
                     <HeaderDescription>{this.props.description}</HeaderDescription>
                 </Tween>
             </HeaderDiv>
