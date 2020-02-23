@@ -17,6 +17,8 @@ import Col from "react-bootstrap/Col";
 import PictureLink from "../components/PictureLink";
 
 import "../../static/styles/bootstrap.css";
+import Footer from "../components/Footer";
+import {darken, lighten} from "polished";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -41,8 +43,8 @@ font-style: normal;
 body{
   width: 100%;
   height: 100%;
-  margin: 0;
   font-family: Raleway, sans-serif;
+  margin: 0 0 10vh;
 }
 `;
 
@@ -88,7 +90,15 @@ const theme = {
         description: {
             fontSize: "2rem",
         }
-    }
+    },
+    colors: {
+        tonalOffset: 0.3,
+        footer: {
+            main : "#FFFFFF",
+            dark: darken(0.2, "#FFFFFF"),
+        }
+
+    },
 };
 
 const Index = ({data}) => {
@@ -113,7 +123,7 @@ const Index = ({data}) => {
                 </FixedBackground>
 
                 <AngledStrip title={"Our products?"}
-                             description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem? Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
+                             description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem?\n Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
 
                 <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src} height="auto">
                     <StyledContainer>
@@ -151,6 +161,7 @@ const Index = ({data}) => {
                         </Row>
                     </StyledContainer>
                 </FixedBackground>
+                <Footer/>
             </ThemeProvider>
         </div>
     );
