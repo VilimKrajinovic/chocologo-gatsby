@@ -47,7 +47,13 @@ body{
 `;
 
 const StyledContainer = styled(Container)`
-  padding-top: 400px;
+  padding-top: ${props => props.theme.pictureLinks.paddingTop};
+  width: 80vw;
+`;
+
+const StyledCol = styled(Col)`
+  float: none;
+  margin: 0 auto;
 `;
 
 const theme = {
@@ -74,13 +80,16 @@ const theme = {
         height: "60em",
     },
     pictureLinks: {
-        size: "300px"
+        paddingTop: "30vh",
+        width: "300px",
+        height: "300px",
+        minWidth: "200px",
+        minHeight: "200px",
+        description: {
+            fontSize: "40px",
+        }
     }
 };
-
-const ColStyle = styled(Col)`
-  display: block;
-`;
 
 const Index = ({data}) => {
     return (
@@ -88,7 +97,7 @@ const Index = ({data}) => {
             <GlobalStyle/>
             <ThemeProvider theme={theme}>
                 <Header title="Chocologo" description={"Vaša najslađa poruka"}
-                                           img={data.headerBackground.childImageSharp.fluid.src}/>
+                        img={data.headerBackground.childImageSharp.fluid.src}/>
                 <AngledStrip title={"Who we are?"}
                              description={`We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.`}/>
 
@@ -106,29 +115,39 @@ const Index = ({data}) => {
                 <AngledStrip title={"Our products?"}
                              description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis debitis expedita facilis neque praesentium suscipit veniam voluptatem? Amet aperiam assumenda fugit harum incidunt libero maiores minus nostrum quod reiciendis!"}/>
 
-                <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src}>
+                <FixedBackground img={data.thirdFixedBackground.childImageSharp.fluid.src} height="100%">
                     <StyledContainer>
-                        <Row className="justify-content-md-center">
-                            <ColStyle md={"auto"}>
+                        <Row className="justify-content-center text-center">
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
                                 <PictureLink to={"/"}
                                              src={data.image1.childImageSharp.fluid.src}
                                              description={"Lorem ipsum dolor sit amet."}/>
-                            </ColStyle>
-                            <ColStyle md={"auto"}>
+                            </StyledCol>
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
                                 <PictureLink to={"/"}
                                              src={data.image1.childImageSharp.fluid.src}
                                              description={"Lorem ipsum dolor sit amet."}/>
-                            </ColStyle>
-                            <ColStyle md={"auto"}>
+                            </StyledCol>
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
                                 <PictureLink to={"/"}
                                              src={data.image1.childImageSharp.fluid.src}
                                              description={"Lorem ipsum dolor sit amet."}/>
-                            </ColStyle>
-                        </Row>
-                        <Row className="justify-content-md-center text-md-center">
-                            <Col md="auto">1</Col>
-                            <Col md="auto">2</Col>
-                            <Col md="auto">3</Col>
+                            </StyledCol>
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </StyledCol>
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </StyledCol>
+                            <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
+                                <PictureLink to={"/"}
+                                             src={data.image1.childImageSharp.fluid.src}
+                                             description={"Lorem ipsum dolor sit amet."}/>
+                            </StyledCol>
                         </Row>
                     </StyledContainer>
                 </FixedBackground>

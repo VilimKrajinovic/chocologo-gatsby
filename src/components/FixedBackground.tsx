@@ -7,7 +7,7 @@ const BackgroundImageStyle = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: ${props => props.theme.backgroundImages.height};
+  height: ${props => props.height ? props.height : props.theme.backgroundImages.height};
   min-height: 100%;
   background-image: url(${props => props.img});
   z-index: 0;
@@ -17,7 +17,7 @@ const BackgroundImageStyle = styled.div`
 const FixedBackground = (props) => {
     return (
         <div>
-            <BackgroundImageStyle img={props.img}>
+            <BackgroundImageStyle img={props.img} height={props.height}>
                 {props.children}
             </BackgroundImageStyle>
         </div>
