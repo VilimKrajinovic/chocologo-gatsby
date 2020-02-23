@@ -19,48 +19,51 @@ const ImgStyle = styled.img`
 const Description = styled.p`
   font-size: 2.7em;
   font-family: "Century Gothic",sans-serif;
-  margin: 150px 0 0;
-  transform: translateY(-50%);
-  :hover{
-    color:red;
-  }
+  
+  position: relative;
+  top:50%;
+  transform: translateY(-100%);
+  
 `;
 
 const DescriptionWrapper = styled.div`
   position: absolute;
-  background: red;
+  background: rgba(247, 119, 0, 0.2);
   color: #ffffff;
-  opacity: 100%;
+  opacity: 0%;
   border-radius: 10px;
   margin: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 300px;
-  width: 300px;
+  height: 300px !important;
+  width: 300px !important;
   text-align: center;
-  vertical-align: center;
-  transition: opacity 0.2s, visibility 0.2s;
+  transform: translateY(-304px);
+  transition: opacity 0.2s;
   
     :hover {
       opacity: 100%;
-      color: red;
-      background: blue;
       visibility: visible;
   }
+`;
+
+const StyledDiv = styled.div`
+
+  height: 300px !important;
+  width: 300px !important;
+
 `;
 
 const Picture = (props) => {
     return (
         <Col md={"2"}>
             <PictureStyle>
-                <ImgStyle src={props.src}/>
-                <DescriptionWrapper>
-                    <Description>
-                        {props.description}
-                    </Description>
-                </DescriptionWrapper>
+                <StyledDiv>
+                    <ImgStyle src={props.src}/>
+                    <DescriptionWrapper>
+                        <Description>
+                            {props.description}
+                        </Description>
+                    </DescriptionWrapper>
+                </StyledDiv>
             </PictureStyle>
         </Col>
     );
