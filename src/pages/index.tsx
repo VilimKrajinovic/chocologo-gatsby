@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import {createGlobalStyle, ThemeProvider} from "styled-components";
+import styled, {createGlobalStyle, ThemeProvider} from "styled-components";
 import Raleway from "../../static/fonts/Raleway-Regular.ttf";
 import Lato from "../../static/fonts/Lato-LightItalic.ttf";
 import Riesling from "../../static/fonts/Riesling.ttf";
@@ -15,7 +15,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Picture from "../components/Picture";
-import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 

@@ -21,7 +21,7 @@ const Description = styled.p`
   font-family: "Century Gothic",sans-serif;
   margin: 150px 0 0;
   transform: translateY(-50%);
-  &:hover{
+  :hover{
     color:red;
   }
 `;
@@ -43,7 +43,7 @@ const DescriptionWrapper = styled.div`
   vertical-align: center;
   transition: opacity 0.2s, visibility 0.2s;
   
-    &:hover {
+    :hover {
       opacity: 100%;
       color: red;
       background: blue;
