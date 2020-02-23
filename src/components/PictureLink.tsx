@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Col from "react-bootstrap/Col";
 import styled from "styled-components";
+import {Link} from 'gatsby';
 
 const PictureStyle = styled.div`
   padding: 0;
@@ -51,10 +52,10 @@ const StyledDiv = styled.div`
 
 `;
 
-const Picture = (props) => {
+const PictureLink = (props) => {
     return (
-        <Col md={"2"}>
-            <PictureStyle>
+        <PictureStyle>
+            <Link to={props.to}>
                 <StyledDiv>
                     <DescriptionWrapper>
                         <Description>
@@ -63,9 +64,9 @@ const Picture = (props) => {
                     </DescriptionWrapper>
                     <ImgStyle src={props.src}/>
                 </StyledDiv>
-            </PictureStyle>
-        </Col>
+            </Link>
+        </PictureStyle>
     );
 };
 
-export default Picture;
+export default PictureLink;

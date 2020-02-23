@@ -14,7 +14,8 @@ import Caption from "../components/Caption";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Picture from "../components/Picture";
+import PictureLink from "../components/PictureLink";
+import {Link} from 'gatsby';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -105,8 +106,19 @@ const Index = ({data}) => {
                         <Container>
                             <Row>
                                 <Col xs={"auto"}>
-                                    <Picture src={data.image1.childImageSharp.fluid.src}
-                                             description={"Lorem ipsum dolor sit amet."}/>
+                                    <PictureLink to={"/"}
+                                                 src={data.image1.childImageSharp.fluid.src}
+                                                 description={"Lorem ipsum dolor sit amet."}/>
+                                </Col>
+                                <Col xs={"auto"}>
+                                    <PictureLink to={"/"}
+                                                 src={data.image1.childImageSharp.fluid.src}
+                                                 description={"Lorem ipsum dolor sit amet."}/>
+                                </Col>
+                                <Col xs={"auto"}>
+                                    <PictureLink to={"/"}
+                                                 src={data.image1.childImageSharp.fluid.src}
+                                                 description={"Lorem ipsum dolor sit amet."}/>
                                 </Col>
                             </Row>
                         </Container>
