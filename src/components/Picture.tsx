@@ -56,10 +56,10 @@ const Picture = (props) => {
         <Col md={"2"}>
             <PictureStyle>
                 <ImgStyle src={props.src}/>
-                <Description>
-                    {props.description}
-                </Description>
                 <DescriptionWrapper>
+                    <Description>
+                        {props.description}
+                    </Description>
                 </DescriptionWrapper>
             </PictureStyle>
         </Col>
