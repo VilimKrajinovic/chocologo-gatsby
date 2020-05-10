@@ -1,13 +1,7 @@
 import { darken } from "polished"
 import * as React from "react"
-import Col from "react-bootstrap/Col"
-import Container from "react-bootstrap/Container"
-import {
-  I18nextProvider,
-  useTranslation,
-  withTranslation,
-  Translation,
-} from "react-i18next"
+import Carousel from "react-bootstrap/Carousel"
+import { I18nextProvider, useTranslation, withTranslation } from "react-i18next"
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
 import Lato from "../../static/fonts/Lato-LightItalic.ttf"
 import Raleway from "../../static/fonts/Raleway-Regular.ttf"
@@ -19,7 +13,6 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import i18n from "../i18n"
 
-import Carousel from "react-bootstrap/Carousel"
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 const GlobalStyle = createGlobalStyle`
@@ -52,7 +45,7 @@ body{
 .carousel-inner img {
   height: 70vh;
   margin: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 `
