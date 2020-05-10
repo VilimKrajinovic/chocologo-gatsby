@@ -24,6 +24,7 @@
     "marked": "^0.8.0",
     "polished": "^3.4.4",
     "prop-types": "^15.7.2",
+    "pure-react-carousel": "^1.27.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
@@ -32,6 +33,7 @@
     "react-i18next": "^11.4.0",
     "react-icons": "^3.9.0",
     "react-lazyload": "^2.6.5",
+    "react-responsive-carousel": "^3.2.7",
     "react-wow": "^1.0.0",
     "styled-components": "^5.0.1"
   },

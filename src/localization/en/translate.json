@@ -1,10 +1,20 @@
 {
   "languageChange": "Change the language:",
-  "languageEnglish": "Engleski",
-  "languageCroatian": "Hrvatski",
+  "languageEnglish": "English",
+  "languageCroatian": "Croatian",
+
   "headerDescription": "Vaša najslađa poruka!",
 
   "first.title": "Who we are?",
   "first.description": "We are a small chocolate company located in Zagreb, Croatia\nOur chocolates are made with the finest Belgian ingredients and melted on perfect temperatures\nDecorated with your own personalized photos and logos.",
-  "first.floating.badge": "YOUR LOGO ON OUR CHOCOLATES"
+  "first.floating.badge": "Your logo on our chocolates",
+
+  "second.title": "How do we make them?",
+  "second.description": "Chocologo chocolates are made by hand in combination with modern 3D technology.\nThe final product is wholy made without use of artificial coloring\nWe use high quality Italian milk and dark chocolate in combination with white chocolate.",
+  "second.floating.badge": "Perfect gift for every occasion",
+
+  "third.title": "Our products",
+
+  "products.birthdays.title": "Birthdays",
+  "products.birthdays.description": "The following is a gallery of our birthday collection."
 }

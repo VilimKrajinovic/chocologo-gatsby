@@ -19,6 +19,10 @@ const ClickableSpan = styled.span`
   padding: 0 10px;
 `
 
+const StyledStrong = styled.strong`
+  width: 10vw;
+`
+
 const Navigation = () => {
   const { t } = useTranslation()
   const changeLanguage = lng => {

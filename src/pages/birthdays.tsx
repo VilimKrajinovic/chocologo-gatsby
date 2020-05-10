@@ -1,9 +1,7 @@
-import { graphql } from "gatsby"
 import { darken } from "polished"
 import * as React from "react"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import {
   I18nextProvider,
   useTranslation,
@@ -16,12 +14,13 @@ import Raleway from "../../static/fonts/Raleway-Regular.ttf"
 import Riesling from "../../static/fonts/Riesling.ttf"
 import "../../static/styles/bootstrap.css"
 import AngledStrip from "../components/AngledStrip"
-import Caption from "../components/Caption"
 import FixedBackground from "../components/FixedBackground"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-import PictureLink from "../components/PictureLink"
 import i18n from "../i18n"
+
+import Carousel from "react-bootstrap/Carousel"
+// import "bootstrap/dist/css/bootstrap.min.css"
 
 const GlobalStyle = createGlobalStyle`
 
@@ -49,16 +48,13 @@ body{
   font-family: Raleway, sans-serif;
   margin: 0 0 10vh;
 }
-`
 
-const StyledContainer = styled(Container)`
-  padding-top: ${props => props.theme.pictureLinks.paddingTop};
-  width: 80vw;
-`
+.carousel-inner img {
+  height: 70vh;
+  margin: auto;
+  object-fit: cover;
+}
 
-const StyledCol = styled(Col)`
-  float: none;
-  margin: 0 auto;
 `
 
 const theme = {
@@ -103,7 +99,11 @@ const theme = {
   },
 }
 
-const Index = ({ data }) => {
+const StyledCarousel = styled(Carousel)`
+  padding-top: 20vh;
+`
+
+const Birthdays = ({ data }) => {
   const { t } = useTranslation()
   return (
     <I18nextProvider i18n={i18n}>
@@ -115,80 +115,38 @@ const Index = ({ data }) => {
           img={data.headerBackground.childImageSharp.fluid.src}
         />
         <AngledStrip
-          title={t("first.title")}
-          description={t("first.description")}
+          title={t("products.birthdays.title")}
+          description={t("products.birthdays.description")}
         />
-
-        <FixedBackground
-          img={data.firstFixedBackground.childImageSharp.fluid.src}
-        >
-          <Caption caption={t("first.floating.badge")} />
-        </FixedBackground>
-
-        <AngledStrip
-          title={t("second.title")}
-          description={t("second.description")}
-        />
-
-        <FixedBackground
-          img={data.secondFixedBackground.childImageSharp.fluid.src}
-        >
-          <Caption caption={t("second.floating.badge")} />
-        </FixedBackground>
-
-        <AngledStrip title={t("third.title")} description={""} />
-
         <FixedBackground
           img={data.thirdFixedBackground.childImageSharp.fluid.src}
-          height="auto"
+          height="100vh"
         >
-          <StyledContainer>
-            <Row className="justify-content-center text-center">
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/birthdays"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Birthdays"}
-                />
-              </StyledCol>
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Lorem ipsum dolor sit amet."}
-                />
-              </StyledCol>
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Lorem ipsum dolor sit amet."}
-                />
-              </StyledCol>
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Lorem ipsum dolor sit amet."}
-                />
-              </StyledCol>
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Lorem ipsum dolor sit amet."}
-                />
-              </StyledCol>
-              <StyledCol md={"auto"} sm={"auto"} xs={"auto"}>
-                <PictureLink
-                  to={"/"}
-                  src={data.image1.childImageSharp.fluid.src}
-                  description={"Lorem ipsum dolor sit amet."}
-                />
-              </StyledCol>
-            </Row>
-          </StyledContainer>
+          <StyledCarousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-75 mh-75"
+                src={data.image1.childImageSharp.fluid.src}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-75"
+                src={data.image1.childImageSharp.fluid.src}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-75"
+                src={data.image1.childImageSharp.fluid.src}
+                alt="First slide"
+              />
+            </Carousel.Item>
+          </StyledCarousel>
         </FixedBackground>
+
         <Footer />
       </ThemeProvider>
     </I18nextProvider>
@@ -235,4 +193,4 @@ export const query = graphql`
   }
 `
 
-export default withTranslation()(Index)
+export default withTranslation()(Birthdays)
