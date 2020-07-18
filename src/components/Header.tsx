@@ -41,7 +41,8 @@ const HeaderDescription = styled.p`
   color: ${props => props.theme.typography.heading.color};
   grid-area: 2/1/2/3;
   margin: 0;
-  padding-top: 3vh;
+  margin-top: 3vh;
+  z-index: 0;
 
   @media (max-width: 768px) {
     font-size: 3vw;
@@ -63,6 +64,16 @@ const HeaderBackground = styled.div`
   z-index: 0;
 `
 
+const HomeButton = styled.a`
+  z-index: 1;
+  color: white;
+  text-decoration: none;
+  :hover {
+    color: white;
+    text-decoration: none;
+  }
+`
+
 export interface HeaderProps {
   title: string
   description: string
@@ -75,7 +86,9 @@ const Header = props => {
       <Navigation />
       <HeaderBackground img={props.img} />
       <Tween from={{ y: "50px", opacity: 0 }}>
-        <HeaderTitle>{props.title}</HeaderTitle>
+        <HeaderTitle>
+          <HomeButton href="/">{props.title}</HomeButton>
+        </HeaderTitle>
       </Tween>
       <Tween from={{ y: "50px", opacity: 0, delay: 0.5 }}>
         <HeaderDescription>{props.description}</HeaderDescription>
