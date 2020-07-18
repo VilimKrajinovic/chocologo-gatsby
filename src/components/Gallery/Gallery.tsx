@@ -30,7 +30,7 @@ const Gallery = props => {
   return (
     <>
       <StyledContainer>
-        <Row>
+        <Row className="justify-content-center text-center">
           {props.data.allFile.edges.map((edge, index) => {
             return (
               <Col md={"auto"} sm={"auto"} xs={"auto"} key={index}>
