@@ -1,10 +1,9 @@
-import * as React from "react"
-import { StaticQuery, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
+import * as React from "react"
+import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import styled from "styled-components"
 
 const StyledImg = styled(Img)`
   height: ${props => props.theme.galleryImages.height};
@@ -32,10 +31,13 @@ const Gallery = props => {
     <>
       <StyledContainer>
         <Row>
-          {props.data.allFile.edges.map(edge => {
+          {props.data.allFile.edges.map((edge, index) => {
             return (
-              <Col>
-                <GalleryImage fluid={edge.node.childImageSharp.fluid} />
+              <Col md={"auto"} sm={"auto"} xs={"auto"} key={index}>
+                <GalleryImage
+                  fluid={edge.node.childImageSharp.fluid}
+                  key={index}
+                />
               </Col>
             )
           })}

@@ -1,19 +1,10 @@
 import { graphql } from "gatsby"
-import { darken } from "polished"
 import * as React from "react"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import {
-  I18nextProvider,
-  useTranslation,
-  withTranslation,
-  Translation,
-} from "react-i18next"
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
-import Lato from "../../static/fonts/Lato-LightItalic.ttf"
-import Raleway from "../../static/fonts/Raleway-Regular.ttf"
-import Riesling from "../../static/fonts/Riesling.ttf"
+import { I18nextProvider, useTranslation, withTranslation } from "react-i18next"
+import styled, { ThemeProvider } from "styled-components"
 import "../../static/styles/bootstrap.css"
 import AngledStrip from "../components/AngledStrip"
 import Caption from "../components/Caption"

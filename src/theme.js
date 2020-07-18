@@ -1,5 +1,5 @@
 import { darken } from "polished"
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import Lato from "../static/fonts/Lato-LightItalic.ttf"
 import Raleway from "../static/fonts/Raleway-Regular.ttf"
 import Riesling from "../static/fonts/Riesling.ttf"

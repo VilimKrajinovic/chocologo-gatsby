@@ -1,11 +1,8 @@
 import * as React from "react"
-import styled from "styled-components"
-import Row from "react-bootstrap/Row"
-import { Link } from "gatsby"
-import { lighten } from "polished"
-
-import "../../static/styles/bootstrap.css"
 import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
+import styled from "styled-components"
+import "../../static/styles/bootstrap.css"
 
 const FooterStyle = styled.footer`
   background: #f77700;
