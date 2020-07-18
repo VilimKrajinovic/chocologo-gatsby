@@ -22,6 +22,7 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import PictureLink from "../components/PictureLink"
 import i18n from "../i18n"
+import theme from "../theme"
 
 const GlobalStyle = createGlobalStyle`
 
@@ -60,55 +61,6 @@ const StyledCol = styled(Col)`
   float: none;
   margin: 0 auto;
 `
-
-const theme = {
-  typography: {
-    heading: {
-      color: "white",
-      fontSize: "6vw",
-      description: {
-        fontSize: "1vw",
-      },
-    },
-    strips: {
-      color: "white",
-      fontSize: "4rem",
-    },
-  },
-  strips: {
-    gradient: {
-      from: "#f77700",
-      to: "#bf6000",
-    },
-  },
-  backgroundImages: {
-    height: "60em",
-  },
-  pictureLinks: {
-    paddingTop: "40vh",
-    width: "300px",
-    height: "300px",
-    minWidth: "200px",
-    minHeight: "200px",
-    description: {
-      fontSize: "2rem",
-    },
-  },
-  colors: {
-    tonalOffset: 0.3,
-    footer: {
-      main: "#FFFFFF",
-      dark: darken(0.2, "#FFFFFF"),
-    },
-  },
-  galleryImages: {
-    paddingTop: "40vh",
-    width: "500px",
-    height: "500px",
-    minWidth: "200px",
-    minHeight: "200px",
-  },
-}
 
 const Index = ({ data }) => {
   const { t } = useTranslation()

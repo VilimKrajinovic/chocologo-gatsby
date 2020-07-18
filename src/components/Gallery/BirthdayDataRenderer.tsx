@@ -15,7 +15,7 @@ const BrithdayDataRenderer = props => {
           node {
             id
             childImageSharp {
-              fluid(maxWidth: 300) {
+              fluid(maxWidth: 500) {
                 base64
                 src
                 srcSet

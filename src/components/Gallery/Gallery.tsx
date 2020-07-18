@@ -7,16 +7,20 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 const ImgStyled = styled(Img)`
-  height: ${props => props.theme.pictureLinks.height};
-  width: ${props => props.theme.pictureLinks.width};
+  height: ${props => props.theme.galleryImages.height};
+  width: ${props => props.theme.galleryImages.width};
   object-fit: cover;
   border-radius: 10px !important;
   margin: 10px;
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    height: ${props => props.theme.pictureLinks.minHeight};
-    width: ${props => props.theme.pictureLinks.minWidth};
+    height: ${props => props.theme.galleryImages.minHeight};
+    width: ${props => props.theme.galleryImages.minWidth};
   }
+`
+
+const ContainerStyled = styled(Container)`
+  padding-top: 30vh;
 `
 
 const GalleryImage = props => {
@@ -26,7 +30,7 @@ const GalleryImage = props => {
 const Gallery = props => {
   return (
     <>
-      <Container>
+      <ContainerStyled>
         <Row>
           {props.data.allFile.edges.map(edge => {
             return (
@@ -36,7 +40,7 @@ const Gallery = props => {
             )
           })}
         </Row>
-      </Container>
+      </ContainerStyled>
     </>
   )
 }

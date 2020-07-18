@@ -14,6 +14,7 @@ import Header from "../components/Header"
 import i18n from "../i18n"
 import Gallery from "../components/Gallery/Gallery"
 import BirthdayDataRenderer from "../components/Gallery/BirthdayDataRenderer"
+import theme from "../theme"
 
 // import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -49,50 +50,7 @@ body{
   margin: auto;
   object-fit: contain;
 }
-
 `
-
-const theme = {
-  typography: {
-    heading: {
-      color: "white",
-      fontSize: "6vw",
-      description: {
-        fontSize: "1vw",
-      },
-    },
-    strips: {
-      color: "white",
-      fontSize: "4rem",
-    },
-  },
-  strips: {
-    gradient: {
-      from: "#f77700",
-      to: "#bf6000",
-    },
-  },
-  backgroundImages: {
-    height: "60em",
-  },
-  pictureLinks: {
-    paddingTop: "40vh",
-    width: "300px",
-    height: "300px",
-    minWidth: "200px",
-    minHeight: "200px",
-    description: {
-      fontSize: "2rem",
-    },
-  },
-  colors: {
-    tonalOffset: 0.3,
-    footer: {
-      main: "#FFFFFF",
-      dark: darken(0.2, "#FFFFFF"),
-    },
-  },
-}
 
 const StyledCarousel = styled(Carousel)`
   padding-top: 20vh;
@@ -118,7 +76,7 @@ const Birthdays = ({ data }) => {
         />
         <FixedBackground
           img={data.thirdFixedBackground.childImageSharp.fluid.src}
-          height="100vh"
+          height="100%"
         >
           <BirthdayDataRenderer></BirthdayDataRenderer>
         </FixedBackground>
