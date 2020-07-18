@@ -1,4 +1,8 @@
 import { darken } from "polished"
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components"
+import Lato from "../static/fonts/Lato-LightItalic.ttf"
+import Raleway from "../static/fonts/Raleway-Regular.ttf"
+import Riesling from "../static/fonts/Riesling.ttf"
 
 const theme = {
   typography: {
@@ -24,7 +28,7 @@ const theme = {
     height: "60em",
   },
   pictureLinks: {
-    paddingTop: "40vh",
+    paddingTop: "30vh",
     width: "300px",
     height: "300px",
     minWidth: "200px",
@@ -47,6 +51,40 @@ const theme = {
     minWidth: "200px",
     minHeight: "200px",
   },
+  footer: {
+    height: "120px",
+  },
+  body: {
+    margin: "0 0 120px",
+  },
 }
 
 export default theme
+
+export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+font-family: Riesling;
+src: url(${Riesling}) format('truetype');
+font-style: normal;
+}
+
+@font-face {
+font-family: Raleway;
+src: url(${Raleway}) format('truetype');
+font-style: normal;
+}
+
+@font-face {
+font-family: Lato;
+src: url(${Lato}) format('truetype');
+font-style: normal;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  font-family: Raleway, sans-serif;
+  margin: ${theme.body.margin};
+}
+`

@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
-const ImgStyled = styled(Img)`
+const StyledImg = styled(Img)`
   height: ${props => props.theme.galleryImages.height};
   width: ${props => props.theme.galleryImages.width};
   object-fit: cover;
@@ -19,18 +19,18 @@ const ImgStyled = styled(Img)`
   }
 `
 
-const ContainerStyled = styled(Container)`
+const StyledContainer = styled(Container)`
   padding-top: 30vh;
 `
 
 const GalleryImage = props => {
-  return <ImgStyled fluid={props.fluid} alt="image"></ImgStyled>
+  return <StyledImg fluid={props.fluid} alt="image"></StyledImg>
 }
 
 const Gallery = props => {
   return (
     <>
-      <ContainerStyled>
+      <StyledContainer>
         <Row>
           {props.data.allFile.edges.map(edge => {
             return (
@@ -40,7 +40,7 @@ const Gallery = props => {
             )
           })}
         </Row>
-      </ContainerStyled>
+      </StyledContainer>
     </>
   )
 }

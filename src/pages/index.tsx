@@ -22,35 +22,7 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import PictureLink from "../components/PictureLink"
 import i18n from "../i18n"
-import theme from "../theme"
-
-const GlobalStyle = createGlobalStyle`
-
-@font-face {
-font-family: Riesling;
-src: url(${Riesling}) format('truetype');
-font-style: normal;
-}
-
-@font-face {
-font-family: Raleway;
-src: url(${Raleway}) format('truetype');
-font-style: normal;
-}
-
-@font-face {
-font-family: Lato;
-src: url(${Lato}) format('truetype');
-font-style: normal;
-}
-
-body{
-  width: 100%;
-  height: 100%;
-  font-family: Raleway, sans-serif;
-  margin: 0 0 10vh;
-}
-`
+import theme, { GlobalStyle } from "../theme"
 
 const StyledContainer = styled(Container)`
   padding-top: ${props => props.theme.pictureLinks.paddingTop};

@@ -9,13 +9,14 @@ import Col from "react-bootstrap/Col"
 
 const FooterStyle = styled.footer`
   background: #f77700;
+  vertical-align: center;
   color: ${props => props.theme.colors.footer.main};
   padding: 40px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: -1000;
-  height: 10vh;
+  height: ${props => props.theme.footer.height};
 `
 
 const StyledRow = styled(Row)`
@@ -43,37 +44,41 @@ const StyledA = styled.a`
   }
 `
 
+const StyledDiv = styled.div``
+
 const Footer = () => {
   return (
     <FooterStyle>
-      <StyledRow>
-        <StyledCol xs>
-          <strong>FIND US ON</strong>
-        </StyledCol>
-        <StyledCol xs>
-          <strong>OTHER LIKS</strong>
-        </StyledCol>
-        <StyledCol xs>
-          <strong>CONTACT US</strong>
-        </StyledCol>
-      </StyledRow>
-      <StyledRow>
-        <StyledCol xs>
-          <StyledA href="https://www.facebook.com/chocologo.hr/">
-            Facebook
-          </StyledA>
-        </StyledCol>
-        <StyledCol xs>
-          <StyledA href="https://www.facebook.com/chocologo.hr/">
-            Facebook
-          </StyledA>
-        </StyledCol>
-        <StyledCol xs>
-          <StyledA href="https://www.facebook.com/chocologo.hr/">
-            Facebook
-          </StyledA>
-        </StyledCol>
-      </StyledRow>
+      <StyledDiv>
+        <StyledRow>
+          <StyledCol xs>
+            <strong>FIND US ON</strong>
+          </StyledCol>
+          <StyledCol xs>
+            <strong>OTHER LIKS</strong>
+          </StyledCol>
+          <StyledCol xs>
+            <strong>CONTACT US</strong>
+          </StyledCol>
+        </StyledRow>
+        <StyledRow>
+          <StyledCol xs>
+            <StyledA href="https://www.facebook.com/chocologo.hr/">
+              Facebook
+            </StyledA>
+          </StyledCol>
+          <StyledCol xs>
+            <StyledA href="https://www.facebook.com/chocologo.hr/">
+              Facebook
+            </StyledA>
+          </StyledCol>
+          <StyledCol xs>
+            <StyledA href="https://www.facebook.com/chocologo.hr/">
+              Facebook
+            </StyledA>
+          </StyledCol>
+        </StyledRow>
+      </StyledDiv>
     </FooterStyle>
   )
 }
