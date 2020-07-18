@@ -12,6 +12,8 @@ import FixedBackground from "../components/FixedBackground"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import i18n from "../i18n"
+import Gallery from "../components/Gallery/Gallery"
+import BirthdayDataRenderer from "../components/Gallery/BirthdayDataRenderer"
 
 // import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -95,6 +97,9 @@ const theme = {
 const StyledCarousel = styled(Carousel)`
   padding-top: 20vh;
 `
+const StyledGallery = styled(Gallery)`
+  padding-top: 20vh;
+`
 
 const Birthdays = ({ data }) => {
   const { t } = useTranslation()
@@ -115,29 +120,7 @@ const Birthdays = ({ data }) => {
           img={data.thirdFixedBackground.childImageSharp.fluid.src}
           height="100vh"
         >
-          <StyledCarousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-75 mh-75"
-                src={data.image1.childImageSharp.fluid.src}
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-75"
-                src={data.image1.childImageSharp.fluid.src}
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-75"
-                src={data.image1.childImageSharp.fluid.src}
-                alt="First slide"
-              />
-            </Carousel.Item>
-          </StyledCarousel>
+          <BirthdayDataRenderer></BirthdayDataRenderer>
         </FixedBackground>
 
         <Footer />

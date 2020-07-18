@@ -101,6 +101,13 @@ const theme = {
       dark: darken(0.2, "#FFFFFF"),
     },
   },
+  galleryImages: {
+    paddingTop: "40vh",
+    width: "500px",
+    height: "500px",
+    minWidth: "200px",
+    minHeight: "200px",
+  },
 }
 
 const Index = ({ data }) => {
